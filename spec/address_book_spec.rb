@@ -64,4 +64,24 @@ RSpec.describe AddressBook do
         expect(entry.email).to eq('bill@blocmail.com')
       end
    end
+
+   describe "#iterative_search" do
+      it "searches AddressBook for a non-existent entry" do
+        book = AddressBook.new
+        book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
+        entry = book.iterative_search("Eda")
+        expect(entry).to be_nil
+      end
+
+      it "searches AddressBook for Bill" do
+        book = AddressBook.new
+        book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
+        book.add_entry('Bill', '555-555-4854', 'bill@blocmail.com')
+        entry = book.iterative_search("Bill")
+        expect(entry).to be_a Entry
+        expect(entry.name).to eq('Bill')
+        expect(entry.phone_number).to eq('555-555-4854')
+        expect(entry.email).to eq('bill@blocmail.com')
+      end
+   end
 end
