@@ -1,4 +1,4 @@
-require_relative '../models/address_book.rb'
+require_relative '../models/address_book'
 
 RSpec.describe AddressBook do
     let(:book) { AddressBook.new }
@@ -51,14 +51,14 @@ RSpec.describe AddressBook do
 
     describe "#import_from_csv" do
 
-        it "imports the correct number of entries"
+        it "imports the correct number of entries" do
             book.import_from_csv("entries.csv")
             book_size = book.entries.size
 
             expect(book_size).to eq(5)
         end
 
-        it "imports the 1st entry"
+        it "imports the 1st entry" do
             book.import_from_csv("entries.csv")
             entry_one = book.entries[0]
 
