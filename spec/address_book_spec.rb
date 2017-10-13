@@ -48,7 +48,6 @@ RSpec.describe AddressBook do
         end
     end
 
-<<<<<<< HEAD
     describe "#binary_search" do
       it "searches AddressBook for a non-existent entry" do
         book = AddressBook.new
@@ -67,7 +66,6 @@ RSpec.describe AddressBook do
         expect(entry.email).to eq('bill@blocmail.com')
       end
    end
-=======
 
     describe "#import_from_csv" do
 
@@ -113,5 +111,4 @@ RSpec.describe AddressBook do
            check_entry(entry_five, "Sussie", "555-555-2036", "sussie@blocmail.com")
         end
     end
->>>>>>> Checkpoint-6-CSVs
 end
