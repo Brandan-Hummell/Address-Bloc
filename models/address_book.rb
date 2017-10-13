@@ -27,7 +27,6 @@ class AddressBook
         end
     end
 
-<<<<<<< HEAD
     def binary_search(name)
       lower = 0
       upper = entries.length - 1
@@ -49,7 +48,6 @@ class AddressBook
       return nil
     end
 
-=======
     def import_from_csv(file_name)
 
      csv_text = File.read(file_name)
@@ -60,5 +58,4 @@ class AddressBook
        add_entry(row_hash["name"], row_hash["phone_number"], row_hash["email"])
      end
     end
->>>>>>> Checkpoint-6-CSVs
 end
